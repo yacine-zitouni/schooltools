@@ -44,7 +44,7 @@ export function expressionSteps(expression: string): { steps: string[]; result: 
 }
 
 /** Solves a linear equation in x such as "2x + 3 = 7". Returns null when it is not linear. */
-export function solveLinear(equation: string): { a: number; b: number; c: number; x: number; steps: string[] } | null {
+export function solveLinear(equation: string): { a: number; c: number; x: number; steps: string[] } | null {
   const [left, right] = equation.split("=");
   if (!left || right === undefined) return null;
   const f = parse(`(${left}) - (${right})`).compile();
@@ -53,7 +53,7 @@ export function solveLinear(equation: string): { a: number; b: number; c: number
   if (!a || Math.abs(at(2) - (2 * a + b0)) > 1e-9) return null;
   const x = Math.round((-b0 / a) * 1e6) / 1e6;
   const c = -b0;
-  return { a, b: 0, c, x, steps: [
+  return { a, c, x, steps: [
     `${equation.trim()}`,
     `On regroupe les termes en x à gauche : ${formatNumber(a)}x = ${formatNumber(c)}`,
     `On divise par ${formatNumber(a)} : x = ${formatNumber(c)} ÷ ${formatNumber(a)}`,
