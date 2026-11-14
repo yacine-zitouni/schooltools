@@ -10,33 +10,167 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CalculatriceRouteImport } from './routes/calculatrice'
+import { Route as CarteMentaleRouteImport } from './routes/carte-mentale'
+import { Route as FlashcardsRouteImport } from './routes/flashcards'
+import { Route as GenerateurRouteImport } from './routes/generateur'
+import { Route as JeuxRouteImport } from './routes/jeux'
+import { Route as NotesRouteImport } from './routes/notes'
+import { Route as ProfilRouteImport } from './routes/profil'
+import { Route as QuizRouteImport } from './routes/quiz'
+import { Route as TempsRouteImport } from './routes/temps'
+import { Route as TuteurRouteImport } from './routes/tuteur'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CalculatriceRoute = CalculatriceRouteImport.update({
+  id: '/calculatrice',
+  path: '/calculatrice',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CarteMentaleRoute = CarteMentaleRouteImport.update({
+  id: '/carte-mentale',
+  path: '/carte-mentale',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FlashcardsRoute = FlashcardsRouteImport.update({
+  id: '/flashcards',
+  path: '/flashcards',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GenerateurRoute = GenerateurRouteImport.update({
+  id: '/generateur',
+  path: '/generateur',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JeuxRoute = JeuxRouteImport.update({
+  id: '/jeux',
+  path: '/jeux',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NotesRoute = NotesRouteImport.update({
+  id: '/notes',
+  path: '/notes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProfilRoute = ProfilRouteImport.update({
+  id: '/profil',
+  path: '/profil',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const QuizRoute = QuizRouteImport.update({
+  id: '/quiz',
+  path: '/quiz',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TempsRoute = TempsRouteImport.update({
+  id: '/temps',
+  path: '/temps',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TuteurRoute = TuteurRouteImport.update({
+  id: '/tuteur',
+  path: '/tuteur',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/calculatrice': typeof CalculatriceRoute
+  '/carte-mentale': typeof CarteMentaleRoute
+  '/flashcards': typeof FlashcardsRoute
+  '/generateur': typeof GenerateurRoute
+  '/jeux': typeof JeuxRoute
+  '/notes': typeof NotesRoute
+  '/profil': typeof ProfilRoute
+  '/quiz': typeof QuizRoute
+  '/temps': typeof TempsRoute
+  '/tuteur': typeof TuteurRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/calculatrice': typeof CalculatriceRoute
+  '/carte-mentale': typeof CarteMentaleRoute
+  '/flashcards': typeof FlashcardsRoute
+  '/generateur': typeof GenerateurRoute
+  '/jeux': typeof JeuxRoute
+  '/notes': typeof NotesRoute
+  '/profil': typeof ProfilRoute
+  '/quiz': typeof QuizRoute
+  '/temps': typeof TempsRoute
+  '/tuteur': typeof TuteurRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/calculatrice': typeof CalculatriceRoute
+  '/carte-mentale': typeof CarteMentaleRoute
+  '/flashcards': typeof FlashcardsRoute
+  '/generateur': typeof GenerateurRoute
+  '/jeux': typeof JeuxRoute
+  '/notes': typeof NotesRoute
+  '/profil': typeof ProfilRoute
+  '/quiz': typeof QuizRoute
+  '/temps': typeof TempsRoute
+  '/tuteur': typeof TuteurRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/calculatrice'
+    | '/carte-mentale'
+    | '/flashcards'
+    | '/generateur'
+    | '/jeux'
+    | '/notes'
+    | '/profil'
+    | '/quiz'
+    | '/temps'
+    | '/tuteur'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/calculatrice'
+    | '/carte-mentale'
+    | '/flashcards'
+    | '/generateur'
+    | '/jeux'
+    | '/notes'
+    | '/profil'
+    | '/quiz'
+    | '/temps'
+    | '/tuteur'
+  id:
+    | '__root__'
+    | '/'
+    | '/calculatrice'
+    | '/carte-mentale'
+    | '/flashcards'
+    | '/generateur'
+    | '/jeux'
+    | '/notes'
+    | '/profil'
+    | '/quiz'
+    | '/temps'
+    | '/tuteur'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CalculatriceRoute: typeof CalculatriceRoute
+  CarteMentaleRoute: typeof CarteMentaleRoute
+  FlashcardsRoute: typeof FlashcardsRoute
+  GenerateurRoute: typeof GenerateurRoute
+  JeuxRoute: typeof JeuxRoute
+  NotesRoute: typeof NotesRoute
+  ProfilRoute: typeof ProfilRoute
+  QuizRoute: typeof QuizRoute
+  TempsRoute: typeof TempsRoute
+  TuteurRoute: typeof TuteurRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +182,91 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/calculatrice': {
+      id: '/calculatrice'
+      path: '/calculatrice'
+      fullPath: '/calculatrice'
+      preLoaderRoute: typeof CalculatriceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/carte-mentale': {
+      id: '/carte-mentale'
+      path: '/carte-mentale'
+      fullPath: '/carte-mentale'
+      preLoaderRoute: typeof CarteMentaleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/flashcards': {
+      id: '/flashcards'
+      path: '/flashcards'
+      fullPath: '/flashcards'
+      preLoaderRoute: typeof FlashcardsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/generateur': {
+      id: '/generateur'
+      path: '/generateur'
+      fullPath: '/generateur'
+      preLoaderRoute: typeof GenerateurRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/jeux': {
+      id: '/jeux'
+      path: '/jeux'
+      fullPath: '/jeux'
+      preLoaderRoute: typeof JeuxRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/notes': {
+      id: '/notes'
+      path: '/notes'
+      fullPath: '/notes'
+      preLoaderRoute: typeof NotesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/profil': {
+      id: '/profil'
+      path: '/profil'
+      fullPath: '/profil'
+      preLoaderRoute: typeof ProfilRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/quiz': {
+      id: '/quiz'
+      path: '/quiz'
+      fullPath: '/quiz'
+      preLoaderRoute: typeof QuizRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/temps': {
+      id: '/temps'
+      path: '/temps'
+      fullPath: '/temps'
+      preLoaderRoute: typeof TempsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tuteur': {
+      id: '/tuteur'
+      path: '/tuteur'
+      fullPath: '/tuteur'
+      preLoaderRoute: typeof TuteurRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CalculatriceRoute: CalculatriceRoute,
+  CarteMentaleRoute: CarteMentaleRoute,
+  FlashcardsRoute: FlashcardsRoute,
+  GenerateurRoute: GenerateurRoute,
+  JeuxRoute: JeuxRoute,
+  NotesRoute: NotesRoute,
+  ProfilRoute: ProfilRoute,
+  QuizRoute: QuizRoute,
+  TempsRoute: TempsRoute,
+  TuteurRoute: TuteurRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

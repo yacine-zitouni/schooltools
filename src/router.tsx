@@ -5,9 +5,11 @@ import { routeTree } from "./routeTree.gen";
 export const getRouter = () => {
   // One client per request: a module-level QueryClient leaks cached data between SSR requests.
   const queryClient = new QueryClient();
+  const basepath = import.meta.env.BASE_URL.replace(/\/+$/, "") || "/";
 
   const router = createRouter({
     routeTree,
+    basepath,
     context: { queryClient },
     scrollRestoration: true,
     // Lets Query own freshness; set caching defaults on the QueryClient, not the router.
